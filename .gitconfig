@@ -1,0 +1,10 @@
+[color]
+	ui = true
+[diff]
+	guitool = meld
+[core]
+	filemode = false
+	editor = vim
+#[user]
+#	name = YOUNAME
+#	email = YOUR@EMAIL
