@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/batdevis'
+let g:netrw_dirhist_2='/home/batdevis/code'
+let g:netrw_dirhist_3='/home/batdevis'
+let g:netrw_dirhist_4='/home/batdevis/code'
+let g:netrw_dirhist_5='/home/batdevis/code/uqido/kgn/codex4/api-server/src'
+let g:netrw_dirhist_6='/home/batdevis/code/uqido/kgn/codex4/api-server/src/handlers'
+let g:netrw_dirhist_7='/home/batdevis/code/uqido/kgn/codex4/api-server/src'
