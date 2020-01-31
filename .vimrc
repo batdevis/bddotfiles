@@ -1,18 +1,35 @@
 "set number
+set encoding=utf-8
 set hidden
 set history=100
 filetype indent on
 set nowrap
+
+" Use 2 characters space only indentation
 set tabstop=2
 set shiftwidth=2
 set expandtab
 set smartindent
 set autoindent
+
 autocmd BufWritePre * :%s/\s\+$//e
 set hlsearch
 set showmatch
 set noswapfile
-set mouse=a
+
+" Automatically close brackets
+inoremap ( ()<Left>
+inoremap [ []<Left>
+inoremap { {}<Left>
+inoremap " ""<Left>
+
+" Add :DiffOrig command to show differences before saving
+if !exists(":DiffOrig")
+  command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+		  \ | wincmd p | diffthis
+endif
+
+"set mouse=a
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 let g:netrw_browse_split = 4
