@@ -59,7 +59,7 @@ fi
 # bd custom prompt
 # get current branch in git repo
 function parse_git_branch() {
-  if [ -d .git ]
+  if git rev-parse --git-dir > /dev/null 2>&1
   then
   	BRANCH=`git branch |grep '*'|awk '{print $2}'`
 	  if [ ! "${BRANCH}" == "" ]
@@ -116,7 +116,8 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 # bd
-alias lg='ls -AlG'
+alias lg='ls -lG'
+alias lga='ls -lGA'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
