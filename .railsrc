@@ -1,1 +1,8 @@
---database postgresql --skip-test-unit
+# .railsrc
+--database=postgresql
+--skip-test
+--skip-javascript
+--skip-turbolinks
+--skip-sprockets
+--skip-bundle
+--skip-action-text

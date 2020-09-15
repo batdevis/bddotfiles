@@ -64,7 +64,7 @@ function parse_git_branch() {
   	BRANCH=`git branch |grep '*'|awk '{print $2}'`
 	  if [ ! "${BRANCH}" == "" ]
   	then
-	  	echo "[${BRANCH}]"
+	  	echo ":${BRANCH}"
   	else
 		  echo ""
 	  fi
@@ -73,10 +73,16 @@ function parse_git_branch() {
   fi
 }
 
-PS1Dollar="$"
+function kubectl_context() {
+  KCONTEXT=`kubectl config current-context`
+  echo "/${KCONTEXT}"
+}
+
+PS1Dollar="»"
 PS1Dir="\[\e[1;33m\]\W\[\e[m\]"
 PS1Git="\[\e[0;32m\]\`parse_git_branch\`\[\e[m\]"
-bdPS1="> ${PS1Dir}${PS1Git}\\${PS1Dollar} "
+PS1Ks="\[\e[0;36m\]\`kubectl_context\`\[\e[m\]"
+bdPS1="${PS1Dir}${PS1Git}${PS1Ks}${PS1Dollar} "
 # /bd custom prompt
 
 if [ "$color_prompt" = yes ]; then
